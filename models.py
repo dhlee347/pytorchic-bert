@@ -107,14 +107,15 @@ class MultiHeadedSelfAttention(nn.Module):
         q, k, v = (split_last(x, (self.n_heads, -1)).transpose(1, 2)
                    for x in [q, k, v])
         # (B, H, S, W) @ (B, H, W, S) -> (B, H, S, S) -softmax-> (B, H, S, S)
-        self.scores = q @ k.transpose(-2, -1) / np.sqrt(k.size(-1))
+        scores = q @ k.transpose(-2, -1) / np.sqrt(k.size(-1))
         if mask is not None:
             mask = mask[:, None, None, :].float()
-            self.scores -= 10000.0 * (1.0 - mask)
-        self.scores = self.drop(F.softmax(self.scores, dim=-1))
+            scores -= 10000.0 * (1.0 - mask)
+        scores = self.drop(F.softmax(scores, dim=-1))
         # (B, H, S, S) @ (B, H, S, W) -> (B, H, S, W) -trans-> (B, S, H, W)
-        h = (self.scores @ v).transpose(1, 2).contiguous()
+        h = (scores @ v).transpose(1, 2).contiguous()
         # -merge-> (B, S, D)
+        self.scores = scores
         return merge_last(h, 2)
 
 
