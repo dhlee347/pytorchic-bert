@@ -81,7 +81,7 @@ Accuracy: 0.8308823704719543
 You should see 83%~85% accuracy in MRPC task
 
 
-### Pre-train Transformer
+### Pre-training Transformer
 ```
 export DATA_FILE=/path/to/corpus
 export BERT_PRETRAIN=/path/to/pretrain
