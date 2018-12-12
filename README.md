@@ -1,4 +1,4 @@
-[<img width="305"
+[<img width="350"
 src="https://user-images.githubusercontent.com/32828768/49876264-ff2e4180-fdf0-11e8-9512-06ffe3ede9c5.png">](https://jalammar.github.io/illustrated-bert/)
 
 # Pytorchic BERT
