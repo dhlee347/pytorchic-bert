@@ -115,8 +115,9 @@ class MultiHeadedSelfAttention(nn.Module):
         # (B, H, S, S) @ (B, H, S, W) -> (B, H, S, W) -trans-> (B, S, H, W)
         h = (scores @ v).transpose(1, 2).contiguous()
         # -merge-> (B, S, D)
+        h = merge_last(h, 2)
         self.scores = scores
-        return merge_last(h, 2)
+        return h
 
 
 class PositionWiseFeedForward(nn.Module):
