@@ -5,9 +5,13 @@ This is Pytorch re-implementation of [Google BERT model](https://github.com/goog
 ## Requirement
 
 Python > 3.6
+
 fire
+
 tqdm
+
 tensorflow (for loading checkpoint file)
+
 tensorboardx
 
 ## Overview
@@ -25,7 +29,7 @@ This contains 9 python files.
 ## Example Usage
 
 ### Fine-tuning (MRPC) Classifier with Pre-trained Transformer
-You can download GLUE Benchmark Datasets via https://github.com/nyu-mll/GLUE-baselines
+Download [GLUE Benchmark Datasets]( https://github.com/nyu-mll/GLUE-baselines) before fine-tuning.
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
