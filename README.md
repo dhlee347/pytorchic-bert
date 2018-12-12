@@ -24,7 +24,8 @@ This contains 9 python files.
 
 ## Example Usage
 
-#### Fine-tuning (MRPC) Classifier with Pre-trained Transformer
+### Fine-tuning (MRPC) Classifier with Pre-trained Transformer
+You can download GLUE Benchmark Datasets via https://github.com/nyu-mll/GLUE-baselines
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
@@ -55,7 +56,7 @@ Iter (loss=0.000): 100%|██████████████████�
 Epoch 15/15 : Average Loss 0.007
 ```
 
-#### Evaluation of trained Classifier
+### Evaluation of trained Classifier
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
@@ -81,7 +82,7 @@ Accuracy: 0.8308823704719543
 You should see 83%~85% accuracy in MRPC task
 
 
-#### Pre-train Transformer
+### Pre-train Transformer
 ```
 export DATA_FILE=/path/to/corpus
 export BERT_PRETRAIN=/path/to/pretrain
