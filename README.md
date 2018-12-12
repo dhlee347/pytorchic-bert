@@ -22,7 +22,9 @@ This contains 9 python files.
 ## Example Usage
 
 ### Fine-tuning (MRPC) Classifier with Pre-trained Transformer
-Download [GLUE Benchmark Datasets]( https://github.com/nyu-mll/GLUE-baselines) before fine-tuning.
+Download [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and
+[GLUE Benchmark Datasets]( https://github.com/nyu-mll/GLUE-baselines) 
+before fine-tuning.
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
@@ -42,14 +44,14 @@ python classify.py \
 Output :
 ```
 cuda (8 GPUs)
-Iter (loss=0.465): 100%|████████████████████████████████| 115/115 [01:22<00:00,  2.04it/s]
+Iter (loss=0.465): 100%|████████████████████████████████████| 115/115 [01:22<00:00,  2.04it/s]
 Epoch 1/15 : Average Loss 0.601
-Iter (loss=0.618): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.26it/s]
+Iter (loss=0.618): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.26it/s]
 Epoch 2/15 : Average Loss 0.437
-Iter (loss=0.051): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.32it/s]
+Iter (loss=0.051): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.32it/s]
 Epoch 3/15 : Average Loss 0.245
                                     ...
-Iter (loss=0.000): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.34it/s]
+Iter (loss=0.000): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.34it/s]
 Epoch 15/15 : Average Loss 0.007
 ```
 
@@ -72,7 +74,7 @@ python classify.py \
 Output :
 ```
 cuda (8 GPUs)
-Iter(acc=0.792): 100%|██████████████████████████████████| 13/13 [00:27<00:00,  2.02it/s]
+Iter(acc=0.792): 100%|██████████████████████████████████████| 13/13 [00:27<00:00,  2.02it/s]
 Accuracy: 0.8308823704719543
 ```
 
