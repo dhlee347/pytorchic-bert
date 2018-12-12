@@ -44,14 +44,14 @@ python classify.py \
 Output :
 ```
 cuda (8 GPUs)
-Iter (loss=0.465): 100%|█████████████████████████| 115/115 [01:22<00:00,  2.04it/s]
+Iter (loss=0.465): 100%|████████████████████████████████| 115/115 [01:22<00:00,  2.04it/s]
 Epoch 1/15 : Average Loss 0.601
-Iter (loss=0.618): 100%|█████████████████████████| 115/115 [00:52<00:00,  2.26it/s]
+Iter (loss=0.618): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.26it/s]
 Epoch 2/15 : Average Loss 0.437
-Iter (loss=0.051): 100%|█████████████████████████| 115/115 [00:52<00:00,  2.32it/s]
+Iter (loss=0.051): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.32it/s]
 Epoch 3/15 : Average Loss 0.245
                                     ...
-Iter (loss=0.000): 100%|█████████████████████████| 115/115 [00:52<00:00,  2.34it/s]
+Iter (loss=0.000): 100%|████████████████████████████████| 115/115 [00:52<00:00,  2.34it/s]
 Epoch 15/15 : Average Loss 0.007
 ```
 
@@ -74,7 +74,7 @@ python classify.py \
 Output :
 ```
 cuda (8 GPUs)
-Iter(acc=0.792): 100%|███████████████████████████| 13/13 [00:27<00:00,  2.02it/s]
+Iter(acc=0.792): 100%|██████████████████████████████████| 13/13 [00:27<00:00,  2.02it/s]
 Accuracy: 0.8308823704719543
 ```
 
@@ -83,7 +83,7 @@ You should see 83%~85% accuracy in MRPC task
 
 #### Pre-train Transformer
 ```
-export DATA_FILE=/path/to/tbc/books_large_all.txt
+export DATA_FILE=/path/to/corpus
 export BERT_PRETRAIN=/path/to/pretrain
 export SAVE_DIR=/path/to/save
 
@@ -101,5 +101,5 @@ Output :
 ```
 cuda (8 GPUs)
 Epoch(loss=3.468):  12%|███▊                            | 3/25 [54:16:45<398:02:53, 65135.16s/it]
-Iter (loss=3.035): : 25409it [15:21:14,  2.18s/it]
+Iter (loss=2.805): : 25584it [15:27:36,  2.18s/it]
 ```
