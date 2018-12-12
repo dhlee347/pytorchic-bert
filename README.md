@@ -4,15 +4,8 @@ This is Pytorch re-implementation of [Google BERT model](https://github.com/goog
 
 ## Requirement
 
-Python > 3.6
-
-fire
-
-tqdm
-
+Python > 3.6, fire, tqdm, tensorboardx,
 tensorflow (for loading checkpoint file)
-
-tensorboardx
 
 ## Overview
 
