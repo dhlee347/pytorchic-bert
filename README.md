@@ -103,4 +103,4 @@ Iter (loss=2.805): : 25584it [15:27:36,  2.18s/it]
 ```
 Training Curve, loss vs steps (only for masked LM) :
 <img src="https://user-images.githubusercontent.com/32828768/49846589-e47cae00-fd99-11e8-9c19-a29e832bf480.png">
-100k steps ~ 2.5 days
+pretraining with Toronto Book Corpus, 100k steps ~ 2.5 days
