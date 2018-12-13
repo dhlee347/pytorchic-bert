@@ -122,5 +122,5 @@ class Trainer(object):
     def save(self, e, i):
         """ save current model """
         torch.save(self.model.state_dict(), # save model object before nn.DataParallel
-            os.path.join(self.save_dir, 'model_epoch_'+str(e)+'_steps_'+str(i)+'.pt'))
+            os.path.join(self.save_dir, 'model_steps_'+str(i)+'.pt'))
 
