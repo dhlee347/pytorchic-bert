@@ -29,6 +29,7 @@ This contains 9 python files.
 Download [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and
 [GLUE Benchmark Datasets]( https://github.com/nyu-mll/GLUE-baselines) 
 before fine-tuning.
+* make sure that total_steps in train_mrpc.json should be n_epochs*(num_data/batch_size)
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
@@ -48,15 +49,12 @@ python classify.py \
 Output :
 ```
 cuda (8 GPUs)
-Iter (loss=0.465): 100%|████████████████████████████████████| 115/115 [01:22<00:00,  2.04it/s]
-Epoch 1/15 : Average Loss 0.601
-Iter (loss=0.618): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.26it/s]
-Epoch 2/15 : Average Loss 0.437
-Iter (loss=0.051): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.32it/s]
-Epoch 3/15 : Average Loss 0.245
-                                    ...
-Iter (loss=0.000): 100%|████████████████████████████████████| 115/115 [00:52<00:00,  2.34it/s]
-Epoch 15/15 : Average Loss 0.007
+Iter (loss=0.308): 100%|██████████████████████████████████████████████| 115/115 [01:19<00:00,  2.07it/s]
+Epoch 1/3 : Average Loss 0.547
+Iter (loss=0.303): 100%|██████████████████████████████████████████████| 115/115 [00:50<00:00,  2.30it/s]
+Epoch 2/3 : Average Loss 0.248
+Iter (loss=0.044): 100%|██████████████████████████████████████████████| 115/115 [00:50<00:00,  2.33it/s]
+Epoch 3/3 : Average Loss 0.068
 ```
 
 ### Evaluation of trained Classifier
@@ -71,17 +69,16 @@ python classify.py \
     --train_cfg config/train_mrpc.json \
     --model_cfg config/bert_base.json \
     --data_file $GLUE_DIR/MRPC/dev.tsv \
-    --model_file $SAVE_DIR/model_epoch_15_steps_1700.pt \
+    --model_file $SAVE_DIR/model_steps_345.pt \
     --vocab $BERT_PRETRAIN/vocab.txt \
     --max_len 128
 ```
 Output :
 ```
 cuda (8 GPUs)
-Iter(acc=0.792): 100%|██████████████████████████████████████| 13/13 [00:27<00:00,  2.02it/s]
-Accuracy: 0.8308823704719543
+Iter(acc=0.792): 100%|████████████████████████████████████████████████| 13/13 [00:27<00:00,  2.01it/s]
+Accuracy: 0.843137264251709
 ```
-
 You should see 83%~85% accuracy in MRPC task
 
 
