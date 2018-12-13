@@ -77,13 +77,16 @@ class Trainer(object):
                 iter_bar.set_description('Iter (loss=%5.3f)'%loss.item())
 
                 if global_step % self.cfg.save_steps == 0: # save
-                    self.save(e+1, global_step)
+                    self.save(global_step)
 
-                if self.cfg.total_steps and self.cfg.total_steps <= global_step:
-                    self.save(e+1, global_step) # save and finish
+                if self.cfg.total_steps and self.cfg.total_steps < global_step:
+                    print('Epoch %d/%d : Average Loss %5.3f'%(e+1, self.cfg.n_epochs, loss_sum/(i+1)))
+                    print('The Total Steps have been reached.')
+                    self.save(global_step) # save and finish when global_steps reach total_steps
                     return
 
             print('Epoch %d/%d : Average Loss %5.3f'%(e+1, self.cfg.n_epochs, loss_sum/(i+1)))
+        self.save(global_step)
 
     def eval(self, evaluate, model_file, data_parallel=True):
         """ Evaluation Loop """
