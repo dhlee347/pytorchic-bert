@@ -6,7 +6,7 @@
 	"n_heads": 12,
 	"p_drop_hidden": 0.1,
 	"max_len": 512,
-	"n_seg": 2,
+	"n_segment": 2,
 	"vocab_size": 30522
 }
 
