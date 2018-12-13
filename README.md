@@ -116,8 +116,12 @@ python pretrain.py \
 Output (with Toronto Book Corpus):
 ```
 cuda (8 GPUs)
-Epoch(loss=3.468):  12%|███▊                            | 3/25 [54:16:45<398:02:53, 65135.16s/it]
-Iter (loss=2.805): : 25584it [15:27:36,  2.18s/it]
+Iter (loss=5.837): : 30089it [18:09:54,  2.17s/it]
+Epoch 1/25 : Average Loss 13.928
+Iter (loss=3.276): : 30091it [18:13:48,  2.18s/it]
+Epoch 2/25 : Average Loss 5.549
+Iter (loss=4.163): : 7380it [4:29:38,  2.19s/it]
+...
 ```
 Training Curve (1 epoch ~ 30k steps ~ 18 hours):
 
