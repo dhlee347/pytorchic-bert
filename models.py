@@ -38,7 +38,7 @@ class Config(NamedTuple):
     p_drop_hidden: float = 0.1 # Probability of Dropout of various Hidden Layers
     p_drop_attn: float = 0.1 # Probability of Dropout of Attention Layers
     max_len: int = 512 # Maximum Length for Positional Embeddings
-    n_segment: int = 2 # Number of Sentence Segments
+    n_segments: int = 2 # Number of Sentence Segments
 
     @classmethod
     def from_json(cls, file):
@@ -71,7 +71,7 @@ class Embeddings(nn.Module):
         super().__init__()
         self.tok_embed = nn.Embedding(cfg.vocab_size, cfg.dim) # token embedding
         self.pos_embed = nn.Embedding(cfg.max_len, cfg.dim) # position embedding
-        self.seg_embed = nn.Embedding(cfg.n_segment, cfg.dim) # segment(token type) embedding
+        self.seg_embed = nn.Embedding(cfg.n_segments, cfg.dim) # segment(token type) embedding
 
         self.norm = LayerNorm(cfg)
         self.drop = nn.Dropout(cfg.p_drop_hidden)
