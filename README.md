@@ -120,6 +120,7 @@ Epoch(loss=3.468):  12%|███▊                            | 3/25 [54:16:45
 Iter (loss=2.805): : 25584it [15:27:36,  2.18s/it]
 ```
 Training Curve (1 epoch ~ 30k steps ~ 18 hours):
+
 Loss for Masked LM vs Iteration steps
 <img src="https://user-images.githubusercontent.com/32828768/49964716-31bb6580-fee9-11e8-82d9-86089732267e.png">
 Loss for Next Sentence Classification vs Iteration steps
