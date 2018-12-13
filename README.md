@@ -2,9 +2,9 @@
 src="https://user-images.githubusercontent.com/32828768/49876264-ff2e4180-fdf0-11e8-9512-06ffe3ede9c5.png">](https://jalammar.github.io/illustrated-bert/)
 
 # Pytorchic BERT
-This is re-implementation of [Google BERT model](https://github.com/google-research/bert) [[paper](https://arxiv.org/abs/1810.04805)] in Pytorch. I'm strongly inspired by [Hugging Face's code](https://github.com/huggingface/pytorch-pretrained-BERT) and I referred a lot to their codes, but I tried to make my codes more pythonic and pytorchic style. Actually, the number of lines is less than a half of HF's.
+This is re-implementation of [Google BERT model](https://github.com/google-research/bert) [[paper](https://arxiv.org/abs/1810.04805)] in Pytorch. I'm strongly inspired by [Hugging Face's code](https://github.com/huggingface/pytorch-pretrained-BERT) and I referred a lot to their codes, but I tried to make my codes **more pythonic and pytorchic style**. Actually, the number of lines is less than a half of HF's. 
 
-(It is still not so heavily tested - let me know when you find some bugs)
+(It is still not so heavily tested - let me know when you find some bugs.)
 
 ## Requirements
 
