@@ -119,7 +119,7 @@ class Trainer(object):
         if model_file:
             self.model.load_state_dict(torch.load(model_file))
 
-    def save(self, e, i):
+    def save(self, i):
         """ save current model """
         torch.save(self.model.state_dict(), # save model object before nn.DataParallel
             os.path.join(self.save_dir, 'model_steps_'+str(i)+'.pt'))
