@@ -57,7 +57,7 @@ Iter (loss=0.044): 100%|██████████████████�
 Epoch 3/3 : Average Loss 0.068
 ```
 
-### Evaluation of trained Classifier
+### Evaluation of the trained Classifier
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
