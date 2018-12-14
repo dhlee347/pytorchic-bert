@@ -126,7 +126,7 @@ Iter (loss=4.163): : 7380it [4:29:38,  2.19s/it]
 Training Curve (1 epoch ~ 30k steps ~ 18 hours):
 
 Loss for Masked LM vs Iteration steps
-<img src="https://user-images.githubusercontent.com/32828768/49964716-31bb6580-fee9-11e8-82d9-86089732267e.png">
+<img src="https://user-images.githubusercontent.com/32828768/50011629-9a0e5380-ff8a-11e8-87ab-18cd22453561.png">
 Loss for Next Sentence Prediction vs Iteration steps
-<img src="https://user-images.githubusercontent.com/32828768/49964719-33852900-fee9-11e8-8eef-6bc770f5f15d.png">
+<img src="https://user-images.githubusercontent.com/32828768/50011633-9c70ad80-ff8a-11e8-8670-8baaebb6e51a.png">
 
