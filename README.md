@@ -79,7 +79,7 @@ cuda (8 GPUs)
 Iter(acc=0.792): 100%|████████████████████████████████████████████████| 13/13 [00:27<00:00,  2.01it/s]
 Accuracy: 0.843137264251709
 ```
-You should see 84%~88% accuracy in this task
+Google BERT original repo also reported 84.5%.
 
 
 ### Pre-training Transformer
