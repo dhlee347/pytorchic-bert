@@ -29,7 +29,7 @@ This contains 9 python files.
 Download pretrained model [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and
 [GLUE Benchmark Datasets]( https://github.com/nyu-mll/GLUE-baselines) 
 before fine-tuning.
-* make sure that "total_steps" in train_mrpc.json should be n_epochs*(num_data/batch_size)
+* make sure that "total_steps" in train_mrpc.json is n_epochs*(num_data/batch_size)
 ```
 export GLUE_DIR=/path/to/glue
 export BERT_PRETRAIN=/path/to/pretrain
