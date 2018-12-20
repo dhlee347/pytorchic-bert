@@ -1,16 +1,4 @@
 # Copyright 2018 Dong-Hyun Lee, Kakao Brain.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 """ Training Config & Helper Classes  """
 
@@ -109,7 +97,12 @@ class Trainer(object):
 
     def load(self, model_file, pretrain_file):
         """ load saved model or pretrained transformer (a part of model) """
-        if pretrain_file: # use pretrained transformer
+        if model_file:
+            print('Loading the model from', model_file)
+            self.model.load_state_dict(torch.load(model_file))
+
+        elif pretrain_file: # use pretrained transformer
+            print('Loading the pretrained model from', pretrain_file)
             if pretrain_file.endswith('.ckpt'): # checkpoint file in tensorflow
                 checkpoint.load_model(self.model.transformer, pretrain_file)
             elif pretrain_file.endswith('.pt'): # pretrain model file in pytorch
@@ -119,8 +112,6 @@ class Trainer(object):
                         if key.startswith('transformer')}
                 ) # load only transformer parts
 
-        if model_file:
-            self.model.load_state_dict(torch.load(model_file))
 
     def save(self, i):
         """ save current model """

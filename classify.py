@@ -1,17 +1,5 @@
 # Copyright 2018 Dong-Hyun Lee, Kakao Brain.
 # (Strongly inspired by original Google BERT code and Hugging Face's code)
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 """ Fine-tuning on A Classification Task with pretrained Transformer """
 
@@ -174,7 +162,7 @@ class Classifier(nn.Module):
     def forward(self, input_ids, segment_ids, input_mask):
         h = self.transformer(input_ids, segment_ids, input_mask)
         # only use the first h in the sequence
-        pooled_h = self.activ(self.fc(h[:, 0])) 
+        pooled_h = self.activ(self.fc(h[:, 0]))
         logits = self.classifier(self.drop(pooled_h))
         return logits
 
