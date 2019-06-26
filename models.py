@@ -59,7 +59,7 @@ class Embeddings(nn.Module):
         super().__init__()
         self.tok_embed = nn.Embedding(cfg.vocab_size, cfg.dim) # token embedding
         self.pos_embed = nn.Embedding(cfg.max_len, cfg.dim) # position embedding
-        self.seg_embed = nn.Embedding(cfg.n_segments + 1, cfg.dim)  # segment(token type) embedding + 1 for segment pad
+        self.seg_embed = nn.Embedding(cfg.n_segments, cfg.dim) # segment(token type) embedding
 
         self.norm = LayerNorm(cfg)
         self.drop = nn.Dropout(cfg.p_drop_hidden)
