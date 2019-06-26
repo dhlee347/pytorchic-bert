@@ -135,7 +135,7 @@ class TokenIndexing(Pipeline):
         label, tokens_a, tokens_b = instance
 
         input_ids = self.indexer(tokens_a + tokens_b)
-        segment_ids = [1]*len(tokens_a) + [2]*len(tokens_b) # token type ids
+        segment_ids = [0]*len(tokens_a) + [1]*len(tokens_b) # token type ids
         input_mask = [1]*(len(tokens_a) + len(tokens_b))
 
         label_id = self.label_map[label]

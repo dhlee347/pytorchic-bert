@@ -121,7 +121,7 @@ class Preprocess4Pretrain(Pipeline):
 
         # Add Special Tokens
         tokens = ['[CLS]'] + tokens_a + ['[SEP]'] + tokens_b + ['[SEP]']
-        segment_ids = [1]*(len(tokens_a)+2) + [2]*(len(tokens_b)+1)
+        segment_ids = [0]*(len(tokens_a)+2) + [1]*(len(tokens_b)+1)
         input_mask = [1]*len(tokens)
 
         # For masked Language Models
