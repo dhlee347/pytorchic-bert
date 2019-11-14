@@ -106,7 +106,6 @@ class Preprocess4Pretrain(Pipeline):
     """ Pre-processing steps for pretraining transformer """
     def __init__(self, max_pred, mask_prob, vocab_words, indexer, max_len=512):
         super().__init__()
-        self.max_len = max_len
         self.max_pred = max_pred # max tokens of prediction
         self.mask_prob = mask_prob # masking probability
         self.vocab_words = vocab_words # vocabulary (sub)words
